@@ -1,11 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import CasesList from "./pages/CasesList";
+import CaseDetail from "./pages/CaseDetail";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Index />} />
+      <Route path="/cases" element={<CasesList />} />
+      <Route path="/cases/:slug" element={<CaseDetail />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </BrowserRouter>
