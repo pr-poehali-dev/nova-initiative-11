@@ -21,6 +21,27 @@ const cases = [
     ],
   },
   {
+    tag: 'Moneycare — FinTech Credit Marketplace',
+    title: 'Launching a New Credit Interface Under Deadline Pressure',
+    subtitle: 'From fragmented delivery to a launched product before high season.',
+    context:
+      'The company needed to launch a new operator interface powered by an updated credit algorithm before the high season (December). Development was fragmented, priorities constantly shifted, and responsibility boundaries were unclear. The CEO required visibility and predictable delivery.',
+    whatIDid: [
+      'Separated technical ownership between development leads to eliminate internal bottlenecks',
+      'Established product-level prioritization aligned with business value',
+      'Unified communication (Slack + Jira integration) to centralize execution',
+      'Structured rollout plan and migration metrics for controlled adoption',
+      'Became the execution bridge between CEO and development',
+    ],
+    results: [
+      'New interface launched before the high season',
+      '60% DAU migrated by deadline',
+      'Full migration completed within the next cycle',
+      'Scope drop reduced significantly',
+      'Delivery became transparent and predictable for the CEO',
+    ],
+  },
+  {
     tag: 'EPAM Systems — ML Matching Platform (100K+ internal users)',
     title: 'Turning a Strategic AI Product into Measurable Impact',
     subtitle: 'From technical speed to value-driven product outcomes.',
