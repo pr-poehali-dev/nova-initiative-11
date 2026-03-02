@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 const images = [
-  'https://cdn.poehali.dev/templates/creative-portfolio-ru/gallery-2.jpg',
-  'https://cdn.poehali.dev/templates/creative-portfolio-ru/gallery-1.jpg',
-  'https://cdn.poehali.dev/templates/creative-portfolio-ru/gallery-4.jpg',
-  'https://cdn.poehali.dev/templates/creative-portfolio-ru/gallery-5.jpg',
+  'https://cdn.poehali.dev/projects/f944b436-aa70-4c49-aebc-ee28570ab2cd/files/24301001-eb53-4182-8954-427ac819feca.jpg',
+  'https://cdn.poehali.dev/projects/f944b436-aa70-4c49-aebc-ee28570ab2cd/files/87a32afb-64f6-49a0-9096-89e39ec57284.jpg',
+  'https://cdn.poehali.dev/projects/f944b436-aa70-4c49-aebc-ee28570ab2cd/files/014338c7-b7b2-4621-8c19-715c4cf26f92.jpg',
+  'https://cdn.poehali.dev/projects/f944b436-aa70-4c49-aebc-ee28570ab2cd/files/e694426f-e593-4012-820f-3db4ce93e59e.jpg',
 ];
 
 const cards = [
