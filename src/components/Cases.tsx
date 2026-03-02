@@ -65,7 +65,7 @@ const cases = [
 
 export default function Cases() {
   return (
-    <section className="bg-black px-8 py-24 md:px-16">
+    <section id="cases" className="bg-black px-8 py-24 md:px-16">
       <div className="container mx-auto max-w-5xl">
 
         <p className="mb-12 text-xs font-medium uppercase tracking-widest text-white/30">
