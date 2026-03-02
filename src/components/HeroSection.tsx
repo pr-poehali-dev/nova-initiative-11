@@ -11,7 +11,7 @@ const images = [
 const cards = [
   {
     label: 'Who I Am',
-    title: "Hi, I'm Eugene.",
+    title: "Hi, I'm Eugene Abramenko.",
     text: "I'm an IT & digital execution architect.",
   },
   {
@@ -76,19 +76,28 @@ export default function HeroSection() {
         <div className="container mx-auto px-8 md:px-16">
           <div className="flex max-w-2xl flex-col gap-10">
 
-            {/* Name + title */}
+            {/* Photo + Name + title */}
             <div
               className={cn(
-                'transform transition-all duration-1000 ease-out',
+                'transform transition-all duration-1000 ease-out flex items-center gap-6',
                 isLoaded ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'
               )}
             >
-              <p className="text-4xl font-light tracking-tight text-white md:text-5xl lg:text-6xl">
-                Eugene
-              </p>
-              <p className="mt-2 text-lg font-light uppercase tracking-[0.25em] text-white/50">
-                IT & Digital Execution Architect
-              </p>
+              <div className="h-20 w-20 shrink-0 overflow-hidden rounded-full border-2 border-white/30 md:h-24 md:w-24">
+                <img
+                  src="https://cdn.poehali.dev/projects/f944b436-aa70-4c49-aebc-ee28570ab2cd/bucket/289390e4-480e-42f3-ad45-ad88d98be6c9.jpg"
+                  alt="Eugene Abramenko"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div>
+                <p className="text-4xl font-light tracking-tight text-white md:text-5xl lg:text-6xl">
+                  Eugene Abramenko
+                </p>
+                <p className="mt-2 text-lg font-light uppercase tracking-[0.25em] text-white/50">
+                  IT & Digital Execution Architect
+                </p>
+              </div>
             </div>
 
             {/* Rotating info card */}
