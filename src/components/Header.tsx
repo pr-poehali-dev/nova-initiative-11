@@ -23,6 +23,12 @@ export default function Header() {
           Cases
         </Link>
         <Link
+          to="/engagement"
+          className="text-sm font-light uppercase tracking-widest text-white/50 transition-colors hover:text-white"
+        >
+          Engagement
+        </Link>
+        <Link
           to={isHome ? '#contacts' : '/#contacts'}
           className="text-sm font-light uppercase tracking-widest text-white/50 transition-colors hover:text-white"
         >
