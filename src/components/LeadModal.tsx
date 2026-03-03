@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const API_URL = 'https://functions.poehali.dev/c3d7e302-cabb-4761-b372-1d3bd0dc0f4b';
 
@@ -10,6 +11,7 @@ interface Props {
 export default function LeadModal({ open, onClose }: Props) {
   const [name, setName] = useState('');
   const [context, setContext] = useState('');
+  const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState<'idle' | 'loading' | 'done' | 'error'>('idle');
 
   if (!open) return null;
@@ -33,6 +35,7 @@ export default function LeadModal({ open, onClose }: Props) {
   const handleClose = () => {
     setName('');
     setContext('');
+    setConsent(false);
     setStatus('idle');
     onClose();
   };
@@ -102,14 +105,34 @@ export default function LeadModal({ open, onClose }: Props) {
                 />
               </div>
 
+              <label className="flex items-start gap-3 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={consent}
+                  onChange={(e) => setConsent(e.target.checked)}
+                  required
+                  className="mt-1 shrink-0 accent-white"
+                />
+                <span className="text-xs font-light leading-relaxed text-white/35">
+                  I consent to the processing of my personal data in accordance with the{' '}
+                  <Link
+                    to="/privacy"
+                    target="_blank"
+                    className="underline underline-offset-2 text-white/50 hover:text-white transition-colors"
+                  >
+                    Privacy Policy
+                  </Link>
+                </span>
+              </label>
+
               {status === 'error' && (
                 <p className="text-sm text-red-400/80">Something went wrong. Please try again.</p>
               )}
 
               <button
                 type="submit"
-                disabled={status === 'loading'}
-                className="w-full border border-white/20 py-3 text-sm font-light uppercase tracking-widest text-white transition-colors hover:bg-white hover:text-black disabled:opacity-40"
+                disabled={status === 'loading' || !consent}
+                className="w-full border border-white/20 py-3 text-sm font-light uppercase tracking-widest text-white transition-colors hover:bg-white hover:text-black disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 {status === 'loading' ? 'Sending…' : 'Send'}
               </button>
