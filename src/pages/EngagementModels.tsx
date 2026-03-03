@@ -1,4 +1,5 @@
 import Header from '@/components/Header';
+import Contacts from '@/components/Contacts';
 
 const models = [
   {
@@ -190,6 +191,7 @@ export default function EngagementModels() {
           </div>
         </section>
 
+        <Contacts />
       </main>
     </>
   );
