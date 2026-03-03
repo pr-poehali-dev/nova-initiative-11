@@ -5,7 +5,7 @@ const links = [
   {
     label: 'Email',
     value: 'em.abramenko@gmail.com',
-    href: 'mailto:em.abramenko@gmail.com',
+    href: null,
   },
   {
     label: 'Telegram',
@@ -47,22 +47,36 @@ export default function Contacts() {
           </div>
 
           <div className="space-y-0 border-t border-white/10">
-            {links.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target={link.href.startsWith('http') ? '_blank' : undefined}
-                rel="noreferrer"
-                className="group flex items-center justify-between border-b border-white/10 py-6 transition-colors hover:bg-white/[0.03]"
-              >
-                <span className="text-sm font-light uppercase tracking-widest text-white/30">
-                  {link.label}
-                </span>
-                <span className="text-base font-light text-white/60 transition-colors group-hover:text-white">
-                  {link.value}
-                </span>
-              </a>
-            ))}
+            {links.map((link) =>
+              link.href ? (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex items-center justify-between border-b border-white/10 py-6 transition-colors hover:bg-white/[0.03]"
+                >
+                  <span className="text-sm font-light uppercase tracking-widest text-white/30">
+                    {link.label}
+                  </span>
+                  <span className="text-base font-light text-white/60 transition-colors group-hover:text-white">
+                    {link.value}
+                  </span>
+                </a>
+              ) : (
+                <div
+                  key={link.label}
+                  className="flex items-center justify-between border-b border-white/10 py-6"
+                >
+                  <span className="text-sm font-light uppercase tracking-widest text-white/30">
+                    {link.label}
+                  </span>
+                  <span className="text-base font-light text-white/60">
+                    {link.value}
+                  </span>
+                </div>
+              )
+            )}
           </div>
 
         </div>
