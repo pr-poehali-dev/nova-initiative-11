@@ -4,6 +4,7 @@ import WhoItsFor from '@/components/WhoItsFor';
 import WhatYouGet from '@/components/WhatYouGet';
 import HowIWork from '@/components/HowIWork';
 import Transformation from '@/components/Transformation';
+import Contacts from '@/components/Contacts';
 
 const Index = () => {
   return (
@@ -15,6 +16,7 @@ const Index = () => {
         <WhatYouGet />
         <HowIWork />
         <Transformation />
+        <Contacts />
       </main>
     </>
   );
