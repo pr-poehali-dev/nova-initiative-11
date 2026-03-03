@@ -70,23 +70,58 @@ export default function EngagementModels() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-black px-8 pb-32 pt-32 md:px-16">
-        <div className="container mx-auto max-w-5xl">
+      <main className="bg-black">
 
-          <p className="mb-4 text-xs font-medium uppercase tracking-widest text-white/30">
-            Engagement Models
-          </p>
-          <p className="mb-20 text-3xl font-light text-white md:text-4xl">
-            Three ways to work together.
-          </p>
+        {/* Hero — three cards visible on first screen */}
+        <section className="flex min-h-screen flex-col px-8 pt-24 pb-0 md:px-16">
+          <div className="container mx-auto flex max-w-5xl flex-col flex-1">
+            <div className="mb-10 pt-8">
+              <p className="mb-3 text-xs font-medium uppercase tracking-widest text-white/30">
+                Engagement Models
+              </p>
+              <p className="text-3xl font-light text-white md:text-4xl">
+                Three ways to work together.
+              </p>
+            </div>
 
-          <div className="space-y-0">
+            {/* Cards */}
+            <div className="grid flex-1 gap-px bg-white/10 md:grid-cols-3">
+              {models.map((model) => (
+                <a
+                  key={model.num}
+                  href={`#model-${model.num}`}
+                  className="group flex flex-col justify-between bg-black p-8 transition-colors hover:bg-white/[0.03]"
+                >
+                  <div>
+                    <span className="mb-6 block text-xs font-light text-white/20">
+                      {model.num}
+                    </span>
+                    <h2 className="mb-4 text-2xl font-light text-white group-hover:text-white/90 md:text-3xl">
+                      {model.title}
+                    </h2>
+                    <p className="text-sm font-light leading-relaxed text-white/45">
+                      {model.purpose}
+                    </p>
+                  </div>
+                  <div className="mt-8 flex items-center justify-between border-t border-white/10 pt-6">
+                    <span className="text-xs font-light text-white/25">{model.duration}</span>
+                    <span className="text-xs font-light text-white/20">↓</span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Detail sections */}
+        <section className="px-8 pb-32 md:px-16">
+          <div className="container mx-auto max-w-5xl">
             {models.map((model) => (
               <div
                 key={model.num}
-                className="border-t border-white/10 py-16"
+                id={`model-${model.num}`}
+                className="border-t border-white/10 py-20"
               >
-                {/* Title row */}
                 <div className="mb-12 flex items-baseline gap-6">
                   <span className="text-sm font-light text-white/20">{model.num}</span>
                   <h2 className="text-2xl font-light text-white md:text-3xl">{model.title}</h2>
@@ -94,7 +129,6 @@ export default function EngagementModels() {
                 </div>
 
                 <div className="grid gap-12 md:grid-cols-2">
-                  {/* Left col */}
                   <div className="space-y-8">
                     <div>
                       <p className="mb-2 text-xs font-medium uppercase tracking-widest text-white/25">
@@ -127,7 +161,6 @@ export default function EngagementModels() {
                     </div>
                   </div>
 
-                  {/* Right col */}
                   <div className="space-y-8">
                     <div>
                       <p className="mb-3 text-xs font-medium uppercase tracking-widest text-white/25">
@@ -155,7 +188,8 @@ export default function EngagementModels() {
               </div>
             ))}
           </div>
-        </div>
+        </section>
+
       </main>
     </>
   );
