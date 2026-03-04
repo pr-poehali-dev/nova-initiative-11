@@ -42,12 +42,12 @@ export default function Transformation() {
               key={i}
               className="grid grid-cols-2 border-b border-white/10 py-4 transition-colors hover:bg-white/5"
             >
-              <p className={`text-base font-light ${row.before === '—' ? 'text-white/15' : 'text-white/50'}`}>
+              <p className="text-base font-light text-red-400/50">
                 {row.before}
               </p>
               <div className="flex items-center gap-3">
                 <span className="h-px w-4 shrink-0 bg-white/20" />
-                <p className="text-base font-light text-white/80">
+                <p className="text-base font-light text-emerald-400/70">
                   {row.after}
                 </p>
               </div>
