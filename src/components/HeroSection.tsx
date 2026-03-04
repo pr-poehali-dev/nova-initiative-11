@@ -129,12 +129,22 @@ export default function HeroSection() {
                 isLoaded ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'
               )}
             >
-              <a
-                href="mailto:"
-                className="inline-block border border-white/30 px-8 py-3 text-sm font-light uppercase tracking-widest text-white transition-all hover:border-white hover:bg-white hover:text-black"
-              >
-                Let's Work Together
-              </a>
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="mailto:em.abramenko@gmail.com"
+                  className="inline-block border border-white/30 px-8 py-3 text-sm font-light uppercase tracking-widest text-white transition-all hover:border-white hover:bg-white hover:text-black"
+                >
+                  Let's Work Together
+                </a>
+                <a
+                  href="https://wa.me/message/XXXXXXXXXXXXXXX"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 border border-white/15 px-8 py-3 text-sm font-light uppercase tracking-widest text-white/60 transition-all hover:border-white/40 hover:text-white"
+                >
+                  Text me on WhatsApp
+                </a>
+              </div>
             </div>
 
           </div>
