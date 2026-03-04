@@ -25,10 +25,10 @@ export const cases: Case[] = [
     context:
       'An investor-backed initiative aimed to build a media business in esports — including studio production, streaming, traffic, and monetization. There was funding and ambition — but no team, no structure, and no operating model.',
     metrics: [
+      { value: '4 mo', label: 'From zero to fully operating' },
       { value: '0→1', label: 'Full studio built from scratch' },
       { value: '6', label: 'Core team roles filled' },
       { value: '1', label: 'Unified P&L model created' },
-      { value: '∞', label: 'Operating system established' },
     ],
     whatIDid: [
       'Built the organizational structure from scratch',
