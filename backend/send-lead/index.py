@@ -19,25 +19,28 @@ def handler(event: dict, context) -> dict:
 
     body = json.loads(event.get("body") or "{}")
     name = (body.get("name") or "").strip()
+    email = (body.get("email") or "").strip()
     context_text = (body.get("context") or "").strip()
 
-    if not name:
+    if not name or not email:
         return {
             "statusCode": 400,
             "headers": headers,
-            "body": json.dumps({"error": "Name is required"}),
+            "body": json.dumps({"error": "Name and email are required"}),
         }
 
     msg = MIMEMultipart("alternative")
     msg["Subject"] = f"New lead from site: {name}"
     msg["From"] = os.environ["SMTP_USER"]
     msg["To"] = RECIPIENT
+    msg["Reply-To"] = email
 
-    text = f"Name: {name}\n\nContext:\n{context_text or '—'}"
+    text = f"Name: {name}\nEmail: {email}\n\nContext:\n{context_text or '—'}"
     html = f"""
     <div style="font-family: sans-serif; color: #111; max-width: 480px;">
       <h2 style="margin-bottom: 8px;">New lead from site</h2>
       <p><strong>Name:</strong> {name}</p>
+      <p><strong>Email:</strong> <a href="mailto:{email}">{email}</a></p>
       <p><strong>Context:</strong><br>{context_text.replace(chr(10), '<br>') if context_text else '—'}</p>
     </div>
     """

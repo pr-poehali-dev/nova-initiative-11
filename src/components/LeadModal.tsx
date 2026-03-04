@@ -10,6 +10,7 @@ interface Props {
 
 export default function LeadModal({ open, onClose }: Props) {
   const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const [context, setContext] = useState('');
   const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState<'idle' | 'loading' | 'done' | 'error'>('idle');
@@ -23,7 +24,7 @@ export default function LeadModal({ open, onClose }: Props) {
       const res = await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, context }),
+        body: JSON.stringify({ name, email, context }),
       });
       if (!res.ok) throw new Error();
       setStatus('done');
@@ -34,6 +35,7 @@ export default function LeadModal({ open, onClose }: Props) {
 
   const handleClose = () => {
     setName('');
+    setEmail('');
     setContext('');
     setConsent(false);
     setStatus('idle');
@@ -88,6 +90,20 @@ export default function LeadModal({ open, onClose }: Props) {
                   onChange={(e) => setName(e.target.value)}
                   required
                   placeholder="Your name"
+                  className="w-full border border-white/10 bg-white/5 px-4 py-3 text-base font-light text-white placeholder-white/20 outline-none transition-colors focus:border-white/30"
+                />
+              </div>
+
+              <div>
+                <label className="mb-2 block text-xs font-medium uppercase tracking-widest text-white/30">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  placeholder="your@email.com"
                   className="w-full border border-white/10 bg-white/5 px-4 py-3 text-base font-light text-white placeholder-white/20 outline-none transition-colors focus:border-white/30"
                 />
               </div>
