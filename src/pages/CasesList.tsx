@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Contacts from '@/components/Contacts';
 import { cases } from '@/data/cases';
@@ -6,6 +7,13 @@ import { cases } from '@/data/cases';
 export default function CasesList() {
   return (
     <>
+      <Helmet>
+        <title>Case Studies — Execution Architect</title>
+        <meta name="description" content="Selected cases: building media operations, launching fintech products under deadline, and turning AI platforms into measurable business outcomes." />
+        <meta property="og:title" content="Case Studies — Execution Architect" />
+        <meta property="og:description" content="Selected cases: building media operations, launching fintech products under deadline, and turning AI platforms into measurable business outcomes." />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <Header />
       <main className="bg-black">
         <div className="px-8 pt-32 pb-24 md:px-16">

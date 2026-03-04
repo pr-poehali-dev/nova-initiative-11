@@ -1,4 +1,5 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Contacts from '@/components/Contacts';
 import { cases } from '@/data/cases';
@@ -14,6 +15,14 @@ export default function CaseDetail() {
 
   return (
     <>
+      <Helmet>
+        <title>{c.title} — Case Study</title>
+        <meta name="description" content={c.context.slice(0, 160)} />
+        <meta property="og:title" content={c.title} />
+        <meta property="og:description" content={c.subtitle} />
+        <meta property="og:image" content={c.image} />
+        <meta property="og:type" content="article" />
+      </Helmet>
       <Header />
       <main className="bg-black">
 

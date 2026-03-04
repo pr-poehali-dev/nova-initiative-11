@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Contacts from '@/components/Contacts';
 
@@ -70,6 +71,13 @@ const models = [
 export default function EngagementModels() {
   return (
     <>
+      <Helmet>
+        <title>Engagement Models — Execution Architect</title>
+        <meta name="description" content="Three ways to work together: Audit (2–4 weeks), Build (2–4 months), or Run (6–12 months). Embedded execution leadership for funded digital initiatives." />
+        <meta property="og:title" content="Engagement Models — Execution Architect" />
+        <meta property="og:description" content="Three ways to work together: Audit, Build, or Run. Embedded execution leadership for funded digital initiatives." />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <Header />
       <main className="bg-black">
 

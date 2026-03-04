@@ -1,8 +1,14 @@
+import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 
 export default function PrivacyPolicy() {
   return (
     <>
+      <Helmet>
+        <title>Privacy Policy — Execution Architect</title>
+        <meta name="description" content="Personal data processing policy for this website. Data controller: Eugene Abramenko." />
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       <Header />
       <main className="bg-black px-8 pt-32 pb-24 md:px-16">
         <div className="container mx-auto max-w-3xl">

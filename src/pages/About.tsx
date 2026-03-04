@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Contacts from '@/components/Contacts';
 import Icon from '@/components/ui/icon';
@@ -230,6 +231,13 @@ export default function About() {
 
   return (
     <>
+      <Helmet>
+        <title>About — Eugene Abramenko, Execution Architect</title>
+        <meta name="description" content="15+ years in digital products. From e-commerce and product management to building execution systems for funded IT and media initiatives." />
+        <meta property="og:title" content="About — Eugene Abramenko, Execution Architect" />
+        <meta property="og:description" content="15+ years in digital products. From e-commerce and product management to building execution systems for funded IT and media initiatives." />
+        <meta property="og:type" content="profile" />
+      </Helmet>
       <Header />
       <main className="bg-black">
         <div className="px-8 pt-32 pb-24 md:px-16">
