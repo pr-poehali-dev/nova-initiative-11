@@ -3,6 +3,7 @@ export interface Case {
   tag: string;
   title: string;
   subtitle: string;
+  image: string;
   context: string;
   whatIDid: string[];
   results: string[];
@@ -14,6 +15,7 @@ export const cases: Case[] = [
     tag: 'Media & Esports',
     title: 'Building a Media & Esports Operation from Zero',
     subtitle: 'From funded ambition to a fully operating media business.',
+    image: 'https://cdn.poehali.dev/projects/f944b436-aa70-4c49-aebc-ee28570ab2cd/files/0eb20462-fa7f-4cca-bbd1-84209e475600.jpg',
     context:
       'An investor-backed initiative aimed to build a media business in esports — including studio production, streaming, traffic, and monetization. There was funding and ambition — but no team, no structure, and no operating model.',
     whatIDid: [
@@ -36,6 +38,7 @@ export const cases: Case[] = [
     tag: 'Moneycare — FinTech Credit Marketplace',
     title: 'Launching a New Credit Interface Under Deadline Pressure',
     subtitle: 'From fragmented delivery to a launched product before high season.',
+    image: 'https://cdn.poehali.dev/projects/f944b436-aa70-4c49-aebc-ee28570ab2cd/files/47b8ce34-af37-4a6a-b061-6282846fb6a1.jpg',
     context:
       'The company needed to launch a new operator interface powered by an updated credit algorithm before the high season (December). Development was fragmented, priorities constantly shifted, and responsibility boundaries were unclear. The CEO required visibility and predictable delivery.',
     whatIDid: [
@@ -58,6 +61,7 @@ export const cases: Case[] = [
     tag: 'EPAM Systems — ML Matching Platform (100K+ internal users)',
     title: 'Turning a Strategic AI Product into Measurable Impact',
     subtitle: 'From technical speed to value-driven product outcomes.',
+    image: 'https://cdn.poehali.dev/projects/f944b436-aa70-4c49-aebc-ee28570ab2cd/files/20e6d7f6-e216-405f-b403-621f0ac5a207.jpg',
     context:
       "The company was building an internal ML matching product. The team focused on real-time prediction speed, while actual user value wasn't clearly measured. Leadership needed results — not technical progress.",
     whatIDid: [
