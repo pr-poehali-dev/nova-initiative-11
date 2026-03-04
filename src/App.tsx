@@ -4,6 +4,7 @@ import CasesList from "./pages/CasesList";
 import CaseDetail from "./pages/CaseDetail";
 import EngagementModels from "./pages/EngagementModels";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
@@ -14,6 +15,7 @@ const App = () => (
       <Route path="/cases/:slug" element={<CaseDetail />} />
       <Route path="/engagement" element={<EngagementModels />} />
       <Route path="/privacy" element={<PrivacyPolicy />} />
+      <Route path="/about" element={<About />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </BrowserRouter>

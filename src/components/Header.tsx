@@ -17,6 +17,12 @@ export default function Header() {
 
       <nav className="relative z-10 flex gap-8">
         <Link
+          to="/about"
+          className="text-sm font-light uppercase tracking-widest text-white/50 transition-colors hover:text-white"
+        >
+          About
+        </Link>
+        <Link
           to="/cases"
           className="text-sm font-light uppercase tracking-widest text-white/50 transition-colors hover:text-white"
         >
