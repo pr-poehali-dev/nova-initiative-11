@@ -1,40 +1,41 @@
 import { useState } from 'react';
+import Icon from '@/components/ui/icon';
 import LeadModal from './LeadModal';
 
 const links = [
   {
     label: 'Email',
-    value: 'em.abramenko@gmail.com',
-    href: null,
+    icon: 'Mail',
+    href: 'mailto:em.abramenko@gmail.com',
   },
   {
     label: 'Telegram',
-    value: '@eugen_targaryen',
+    icon: 'Send',
     href: 'https://t.me/eugen_targaryen',
   },
   {
     label: 'LinkedIn',
-    value: 'eugeneabramenko',
+    icon: 'Linkedin',
     href: 'https://www.linkedin.com/in/eugeneabramenko/',
   },
   {
     label: 'YouTube',
-    value: '@managersnotes',
+    icon: 'Youtube',
     href: 'https://www.youtube.com/@managersnotes',
   },
   {
     label: 'Telegram Channel',
-    value: '@bdsmmchannel',
+    icon: 'Radio',
     href: 'https://t.me/bdsmmchannel',
   },
   {
     label: 'Boosty',
-    value: 'tabletkideda',
+    icon: 'Zap',
     href: 'https://boosty.to/tabletkideda',
   },
   {
     label: 'Book',
-    value: 'Продукт — Google Books',
+    icon: 'BookOpen',
     href: 'https://www.google.ru/books/edition/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82/Scg7EAAAQBAJ?hl=ru&gbpv=0',
   },
 ];
@@ -46,57 +47,29 @@ export default function Contacts() {
     <>
       <LeadModal open={modalOpen} onClose={() => setModalOpen(false)} />
 
-      <section id="contacts" className="bg-black px-8 py-24 md:px-16">
-        <div className="container mx-auto max-w-5xl">
+      <section id="contacts" className="border-t border-white/10 bg-black px-8 py-10 md:px-16">
+        <div className="container mx-auto max-w-5xl flex flex-col items-center gap-6 md:flex-row md:items-center md:justify-between">
 
-          <div className="mb-16 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="mb-3 text-xs font-medium uppercase tracking-widest text-white/30">
-                Contacts
-              </p>
-              <p className="text-3xl font-light text-white md:text-4xl">
-                Ready to talk?
-              </p>
-            </div>
-            <button
-              onClick={() => setModalOpen(true)}
-              className="self-start border border-white/20 px-8 py-3 text-sm font-light uppercase tracking-widest text-white transition-colors hover:bg-white hover:text-black md:self-auto"
-            >
-              Get in touch
-            </button>
-          </div>
+          <button
+            onClick={() => setModalOpen(true)}
+            className="border border-white/20 px-8 py-3 text-sm font-light uppercase tracking-widest text-white transition-colors hover:bg-white hover:text-black"
+          >
+            Get in touch
+          </button>
 
-          <div className="space-y-0 border-t border-white/10">
-            {links.map((link) =>
-              link.href ? (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group flex items-center justify-between border-b border-white/10 py-6 transition-colors hover:bg-white/[0.03]"
-                >
-                  <span className="text-sm font-light uppercase tracking-widest text-white/30">
-                    {link.label}
-                  </span>
-                  <span className="text-base font-light text-white/60 transition-colors group-hover:text-white">
-                    {link.value}
-                  </span>
-                </a>
-              ) : (
-                <div
-                  key={link.label}
-                  className="flex items-center justify-between border-b border-white/10 py-6"
-                >
-                  <span className="text-sm font-light uppercase tracking-widest text-white/30">
-                    {link.label}
-                  </span>
-                  <span className="text-base font-light text-white/60">
-                    {link.value}
-                  </span>
-                </div>
-              )
-            )}
+          <div className="flex items-center gap-5">
+            {links.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith('mailto') ? undefined : '_blank'}
+                rel="noreferrer"
+                title={link.label}
+                className="text-white/30 transition-colors hover:text-white"
+              >
+                <Icon name={link.icon} size={18} />
+              </a>
+            ))}
           </div>
 
         </div>
