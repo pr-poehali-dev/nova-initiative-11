@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Contacts from '@/components/Contacts';
 import Icon from '@/components/ui/icon';
+import type { ReactNode } from 'react';
 
 const timeline = [
   {
@@ -39,6 +40,7 @@ const timeline = [
     year: '2021',
     title: 'Book "Product"',
     desc: 'Wrote a fictional book about the world of product management — available on Google Play Books.',
+    href: 'https://www.google.ru/books/edition/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82/Scg7EAAAQBAJ?hl=ru&gbpv=0',
   },
   {
     year: '2024',
@@ -68,7 +70,11 @@ const interests = [
   { icon: 'FlaskConical', label: 'Longevity & science' },
 ];
 
-const fullStory = [
+const A = ({ href, children }: { href: string; children: ReactNode }) => (
+  <a href={href} target="_blank" rel="noreferrer" className="text-white/75 underline underline-offset-2 hover:text-white transition-colors">{children}</a>
+);
+
+const fullStory: { label: string; content: ReactNode[] }[] = [
   {
     label: 'Early Interest in Systems and Management',
     content: [
@@ -153,7 +159,7 @@ const fullStory = [
     label: 'Book',
     content: [
       'In 2021 I wrote a fictional book about the world of product management called "Product".',
-      'The book explores the life and work of people in the digital product industry and reflects many real observations about the profession. It is available in digital bookstores including Google Play Books.',
+      <>'The book explores the life and work of people in the digital product industry and reflects many real observations about the profession. It is available in digital bookstores including <A href="https://www.google.ru/books/edition/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82/Scg7EAAAQBAJ?hl=ru&gbpv=0">Google Play Books</A>.</>,
     ],
   },
   {
@@ -161,7 +167,7 @@ const fullStory = [
     content: [
       'Alongside my professional work I have maintained public channels where I write about technology, management, and the product industry.',
       'My media activity began around 2013 when I started publishing professional posts about marketing and digital products.',
-      'Today my audience includes more than 18,000 followers on LinkedIn, a Telegram channel with around 2,000 subscribers, as well as channels on Boosty and YouTube.',
+      <>Today my audience includes more than 18,000 followers on <A href="https://www.linkedin.com/in/eugeneabramenko/">LinkedIn</A>, a <A href="https://t.me/bdsmmchannel">Telegram channel</A> with around 2,000 subscribers, as well as channels on <A href="https://boosty.to/tabletkideda">Boosty</A> and <A href="https://www.youtube.com/@managersnotes">YouTube</A>.</>,
     ],
   },
   {
@@ -292,7 +298,9 @@ export default function About() {
                       {/* Content */}
                       <div className="flex-1 pb-2">
                         <p className="mb-1 text-sm font-medium text-white/80 group-hover:text-white transition-colors">
-                          {item.title}
+                          {item.href ? (
+                            <a href={item.href} target="_blank" rel="noreferrer" className="hover:underline underline-offset-2">{item.title}</a>
+                          ) : item.title}
                         </p>
                         <p className="text-sm font-light leading-relaxed text-white/35">
                           {item.desc}
