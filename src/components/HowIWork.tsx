@@ -104,22 +104,29 @@ export default function HowIWork() {
         </div>
 
         {/* Timeline */}
-        <div className="max-w-sm">
+        <div>
           <p className="mb-8 text-xs font-medium uppercase tracking-widest text-white/30">
             Timeline
           </p>
-          <div className="space-y-0 border-t border-white/10">
+          <div className="flex flex-col gap-4 md:flex-row">
             {[
               { phase: 'Diagnosis', duration: '1–2 weeks' },
               { phase: 'Architecture + key hiring', duration: '4–8 weeks' },
               { phase: 'Stable operational mode', duration: '3–6 months' },
-            ].map((row) => (
-              <div
-                key={row.phase}
-                className="flex items-center justify-between border-b border-white/10 py-4"
-              >
-                <span className="text-base font-light text-white/60">{row.phase}</span>
-                <span className="text-base font-light text-white/30">{row.duration}</span>
+            ].map((row, i) => (
+              <div key={row.phase} className="flex flex-1 items-stretch gap-4">
+                <div className="flex flex-1 flex-col justify-between gap-6 border border-white/10 p-6 transition-colors hover:border-white/25">
+                  <span className="text-xs font-medium text-white/20">0{i + 1}</span>
+                  <div>
+                    <p className="mb-1 text-base font-light text-white">{row.phase}</p>
+                    <p className="text-sm font-light text-white/30">{row.duration}</p>
+                  </div>
+                </div>
+                {i < 2 && (
+                  <div className="hidden w-4 shrink-0 items-center justify-center md:flex">
+                    <Icon name="ArrowRight" size={14} className="text-white/20" />
+                  </div>
+                )}
               </div>
             ))}
           </div>
