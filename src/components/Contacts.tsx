@@ -17,6 +17,21 @@ const links = [
     value: 'eugeneabramenko',
     href: 'https://www.linkedin.com/in/eugeneabramenko/',
   },
+  {
+    label: 'YouTube',
+    value: '@managersnotes',
+    href: 'https://www.youtube.com/@managersnotes',
+  },
+  {
+    label: 'Telegram Channel',
+    value: '@bdsmmchannel',
+    href: 'https://t.me/bdsmmchannel',
+  },
+  {
+    label: 'Boosty',
+    value: 'tabletkideda',
+    href: 'https://boosty.to/tabletkideda',
+  },
 ];
 
 export default function Contacts() {
