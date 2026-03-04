@@ -1,12 +1,12 @@
 const rows = [
-  { before: 'Idea', after: 'Clear execution strategy' },
-  { before: 'Budget', after: 'Financial model & cost structure' },
-  { before: '—', after: 'Strong team in defined roles' },
-  { before: '—', after: 'Clear ownership & accountability' },
-  { before: '—', after: 'Organised execution processes' },
-  { before: '—', after: 'Management cadence & reporting' },
-  { before: '—', after: 'Measurable business results' },
-  { before: '—', after: 'Scalable operating system' },
+  { before: 'Idea without execution plan', after: 'Clear execution strategy' },
+  { before: 'Budget without financial logic', after: 'Financial model & cost structure' },
+  { before: 'No team or wrong team', after: 'Strong team hired and structured' },
+  { before: 'Blurred roles & accountability', after: 'Clear ownership across the initiative' },
+  { before: 'Chaotic execution', after: 'Organised execution processes' },
+  { before: 'No visibility into progress', after: 'Management cadence & reporting' },
+  { before: 'Dependency on one person', after: 'Reduced chaos, distributed control' },
+  { before: 'Stalled growth', after: 'Measurable results & scalable system' },
 ];
 
 export default function Transformation() {
