@@ -54,9 +54,9 @@ export const cases: Case[] = [
     context:
       'The company needed to launch a new operator interface powered by an updated credit algorithm before the high season (December). Development was fragmented, priorities constantly shifted, and responsibility boundaries were unclear. The CEO required visibility and predictable delivery.',
     metrics: [
+      { value: '4 mo', label: 'From kickoff to launch' },
       { value: '60%', label: 'DAU migrated by deadline' },
       { value: '100%', label: 'Migration completed next cycle' },
-      { value: 'Dec', label: 'Launched before high season' },
       { value: '↓', label: 'Scope drop reduced significantly' },
     ],
     whatIDid: [
@@ -83,10 +83,10 @@ export const cases: Case[] = [
     context:
       "The company was building an internal ML matching product. The team focused on real-time prediction speed, while actual user value wasn't clearly measured. Leadership needed results — not technical progress.",
     metrics: [
-      { value: '2×', label: 'Product usage doubled in 6 months' },
+      { value: '6 mo', label: 'Engagement period' },
+      { value: '2×', label: 'Product usage doubled' },
       { value: '100K+', label: 'Internal users on the platform' },
       { value: '↑', label: 'Matching relevance improved' },
-      { value: '1', label: 'New value metric introduced' },
     ],
     whatIDid: [
       'Reframed the product focus from "real-time speed" to measurable relevance',
