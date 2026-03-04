@@ -1,3 +1,5 @@
+import Icon from '@/components/ui/icon';
+
 const steps = [
   {
     n: '01',
@@ -39,38 +41,80 @@ const outcomes = [
   'A clear foundation for scaling',
 ];
 
+// Split steps into rows of 3 and 2 for the snake layout
+const row1 = steps.slice(0, 3); // 01 02 03 → left to right
+const row2 = steps.slice(3, 5); // 04 05 → right to left
+
 export default function HowIWork() {
   return (
     <section className="bg-black px-8 py-24 md:px-16">
       <div className="container mx-auto max-w-5xl space-y-24">
 
-        {/* Steps */}
+        {/* Steps snake */}
         <div>
           <p className="mb-16 text-xs font-medium uppercase tracking-widest text-white/30">
             How I Work
           </p>
-          <div className="space-y-0 border-t border-white/10">
-            {steps.map((step) => (
-              <div
-                key={step.n}
-                className="grid gap-4 border-b border-white/10 py-6 md:grid-cols-[60px_1fr_auto] md:items-center md:gap-8"
-              >
-                <span className="text-sm font-light text-white/20">{step.n}</span>
-                <div>
-                  <p className="mb-1 text-lg font-light text-white">{step.title}</p>
-                  <p className="text-base font-light text-white/45">{step.desc}</p>
+
+          {/* Row 1: left → right */}
+          <div className="flex flex-col gap-4 md:flex-row md:items-stretch">
+            {row1.map((step, i) => (
+              <div key={step.n} className="flex flex-1 items-stretch gap-4">
+                {/* Card */}
+                <div className="flex flex-1 flex-col gap-4 border border-white/10 p-6 transition-colors hover:border-white/25">
+                  <span className="text-xs font-medium text-white/20">{step.n}</span>
+                  <div className="flex-1">
+                    <p className="mb-2 text-base font-light text-white">{step.title}</p>
+                    <p className="text-sm font-light leading-relaxed text-white/45">{step.desc}</p>
+                  </div>
+                  {step.timeline && (
+                    <span className="text-xs font-light text-white/25">{step.timeline}</span>
+                  )}
                 </div>
-                {step.timeline && (
-                  <span className="whitespace-nowrap text-sm font-light text-white/25">
-                    {step.timeline}
-                  </span>
+                {/* Arrow right (between cards, not after last) */}
+                {i < row1.length - 1 && (
+                  <div className="hidden items-center md:flex">
+                    <Icon name="ArrowRight" size={16} className="text-white/20" />
+                  </div>
                 )}
               </div>
             ))}
           </div>
 
+          {/* Turn arrow: down on the right */}
+          <div className="my-4 hidden justify-end pr-[calc(50%-theme(spacing.5))] md:flex">
+            <Icon name="ArrowDown" size={16} className="text-white/20" />
+          </div>
+
+          {/* Row 2: right → left (reversed visually) */}
+          <div className="flex flex-col gap-4 md:flex-row-reverse md:items-stretch">
+            {row2.map((step, i) => (
+              <div key={step.n} className="flex flex-1 items-stretch gap-4">
+                {/* Card */}
+                <div className="flex flex-1 flex-col gap-4 border border-white/10 p-6 transition-colors hover:border-white/25">
+                  <span className="text-xs font-medium text-white/20">{step.n}</span>
+                  <div className="flex-1">
+                    <p className="mb-2 text-base font-light text-white">{step.title}</p>
+                    <p className="text-sm font-light leading-relaxed text-white/45">{step.desc}</p>
+                  </div>
+                  {step.timeline && (
+                    <span className="text-xs font-light text-white/25">{step.timeline}</span>
+                  )}
+                </div>
+                {/* Arrow left (between cards in reversed row) */}
+                {i < row2.length - 1 && (
+                  <div className="hidden items-center md:flex">
+                    <Icon name="ArrowLeft" size={16} className="text-white/20" />
+                  </div>
+                )}
+              </div>
+            ))}
+            {/* Empty slots to keep grid aligned (row2 has 2 of 3 cols) */}
+            <div className="hidden flex-1 md:block" />
+          </div>
+
           {/* Embed note */}
-          <p className="mt-10 border-l-2 border-white/15 pl-6 text-base font-light italic leading-relaxed text-white/40">
+          <p className="mt-12 border-l-2 border-white/15 pl-6 text-base font-light italic leading-relaxed text-white/40">
             I do not operate as an external consultant.
             I embed into the initiative and build the execution system from within.
           </p>
