@@ -41,9 +41,28 @@ const outcomes = [
   'A clear foundation for scaling',
 ];
 
-// Split steps into rows of 3 and 2 for the snake layout
-const row1 = steps.slice(0, 3); // 01 02 03 → left to right
-const row2 = steps.slice(3, 5); // 04 05 → right to left
+function StepCard({ step }: { step: typeof steps[0] }) {
+  return (
+    <div className="flex flex-1 flex-col gap-4 border border-white/10 p-6 transition-colors hover:border-white/25">
+      <span className="text-xs font-medium text-white/20">{step.n}</span>
+      <div className="flex-1">
+        <p className="mb-2 text-base font-light text-white">{step.title}</p>
+        <p className="text-sm font-light leading-relaxed text-white/45">{step.desc}</p>
+      </div>
+      {step.timeline && (
+        <span className="text-xs font-light text-white/25">{step.timeline}</span>
+      )}
+    </div>
+  );
+}
+
+function Arrow({ dir }: { dir: 'right' | 'left' }) {
+  return (
+    <div className="hidden w-4 shrink-0 items-center justify-center md:flex">
+      <Icon name={dir === 'right' ? 'ArrowRight' : 'ArrowLeft'} size={14} className="text-white/20" />
+    </div>
+  );
+}
 
 export default function HowIWork() {
   return (
@@ -56,61 +75,33 @@ export default function HowIWork() {
             How I Work
           </p>
 
-          {/* Row 1: left → right */}
+          {/* Row 1: 01 → 02 → 03 */}
           <div className="flex flex-col gap-4 md:flex-row md:items-stretch">
-            {row1.map((step, i) => (
-              <div key={step.n} className="flex flex-1 items-stretch gap-4">
-                {/* Card */}
-                <div className="flex flex-1 flex-col gap-4 border border-white/10 p-6 transition-colors hover:border-white/25">
-                  <span className="text-xs font-medium text-white/20">{step.n}</span>
-                  <div className="flex-1">
-                    <p className="mb-2 text-base font-light text-white">{step.title}</p>
-                    <p className="text-sm font-light leading-relaxed text-white/45">{step.desc}</p>
-                  </div>
-                  {step.timeline && (
-                    <span className="text-xs font-light text-white/25">{step.timeline}</span>
-                  )}
-                </div>
-                {/* Arrow right (between cards, not after last) */}
-                {i < row1.length - 1 && (
-                  <div className="hidden items-center md:flex">
-                    <Icon name="ArrowRight" size={16} className="text-white/20" />
-                  </div>
-                )}
-              </div>
-            ))}
+            <StepCard step={steps[0]} />
+            <Arrow dir="right" />
+            <StepCard step={steps[1]} />
+            <Arrow dir="right" />
+            <StepCard step={steps[2]} />
           </div>
 
-          {/* Turn arrow: down on the right */}
-          <div className="my-4 hidden justify-end pr-[calc(50%-theme(spacing.5))] md:flex">
-            <Icon name="ArrowDown" size={16} className="text-white/20" />
+          {/* Turn: ↓ на правой колонке */}
+          <div className="my-3 hidden md:flex">
+            <div className="flex-1" />{/* col1 */}
+            <div className="w-4" />{/* arrow gap */}
+            <div className="flex-1" />{/* col2 */}
+            <div className="w-4" />{/* arrow gap */}
+            <div className="flex flex-1 justify-center">
+              <Icon name="ArrowDown" size={16} className="text-white/20" />
+            </div>
           </div>
 
-          {/* Row 2: right → left (reversed visually) */}
-          <div className="flex flex-col gap-4 md:flex-row-reverse md:items-stretch">
-            {row2.map((step, i) => (
-              <div key={step.n} className="flex flex-1 items-stretch gap-4">
-                {/* Card */}
-                <div className="flex flex-1 flex-col gap-4 border border-white/10 p-6 transition-colors hover:border-white/25">
-                  <span className="text-xs font-medium text-white/20">{step.n}</span>
-                  <div className="flex-1">
-                    <p className="mb-2 text-base font-light text-white">{step.title}</p>
-                    <p className="text-sm font-light leading-relaxed text-white/45">{step.desc}</p>
-                  </div>
-                  {step.timeline && (
-                    <span className="text-xs font-light text-white/25">{step.timeline}</span>
-                  )}
-                </div>
-                {/* Arrow left (between cards in reversed row) */}
-                {i < row2.length - 1 && (
-                  <div className="hidden items-center md:flex">
-                    <Icon name="ArrowLeft" size={16} className="text-white/20" />
-                  </div>
-                )}
-              </div>
-            ))}
-            {/* Empty slots to keep grid aligned (row2 has 2 of 3 cols) */}
-            <div className="hidden flex-1 md:block" />
+          {/* Row 2: пусто | пусто | 05 ← 04, визуально справа налево */}
+          <div className="flex flex-col gap-4 md:flex-row md:items-stretch">
+            <div className="hidden flex-1 md:block" />{/* пустая col1 */}
+            <div className="hidden w-4 md:block" />{/* пустой gap */}
+            <StepCard step={steps[3]} />
+            <Arrow dir="left" />
+            <StepCard step={steps[4]} />
           </div>
 
           {/* Embed note */}
