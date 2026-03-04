@@ -14,4 +14,4 @@ User-agent: *
 Allow: /
 Disallow: /privacy
 
-Sitemap: https://YOUR_DOMAIN.com/sitemap.xml
+Sitemap: https://executionarchitect.tech/sitemap.xml
