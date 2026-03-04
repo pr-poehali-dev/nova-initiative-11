@@ -1,3 +1,8 @@
+export interface CaseMetric {
+  value: string;
+  label: string;
+}
+
 export interface Case {
   slug: string;
   tag: string;
@@ -5,6 +10,7 @@ export interface Case {
   subtitle: string;
   image: string;
   context: string;
+  metrics: CaseMetric[];
   whatIDid: string[];
   results: string[];
 }
@@ -18,6 +24,12 @@ export const cases: Case[] = [
     image: 'https://cdn.poehali.dev/projects/f944b436-aa70-4c49-aebc-ee28570ab2cd/files/0eb20462-fa7f-4cca-bbd1-84209e475600.jpg',
     context:
       'An investor-backed initiative aimed to build a media business in esports — including studio production, streaming, traffic, and monetization. There was funding and ambition — but no team, no structure, and no operating model.',
+    metrics: [
+      { value: '0→1', label: 'Full studio built from scratch' },
+      { value: '6', label: 'Core team roles filled' },
+      { value: '1', label: 'Unified P&L model created' },
+      { value: '∞', label: 'Operating system established' },
+    ],
     whatIDid: [
       'Built the organizational structure from scratch',
       'Hired and assembled the full core team (hosts, video production, technical staff, traffic team)',
@@ -41,6 +53,12 @@ export const cases: Case[] = [
     image: 'https://cdn.poehali.dev/projects/f944b436-aa70-4c49-aebc-ee28570ab2cd/files/47b8ce34-af37-4a6a-b061-6282846fb6a1.jpg',
     context:
       'The company needed to launch a new operator interface powered by an updated credit algorithm before the high season (December). Development was fragmented, priorities constantly shifted, and responsibility boundaries were unclear. The CEO required visibility and predictable delivery.',
+    metrics: [
+      { value: '60%', label: 'DAU migrated by deadline' },
+      { value: '100%', label: 'Migration completed next cycle' },
+      { value: 'Dec', label: 'Launched before high season' },
+      { value: '↓', label: 'Scope drop reduced significantly' },
+    ],
     whatIDid: [
       'Separated technical ownership between development leads to eliminate internal bottlenecks',
       'Established product-level prioritization aligned with business value',
@@ -64,6 +82,12 @@ export const cases: Case[] = [
     image: 'https://cdn.poehali.dev/projects/f944b436-aa70-4c49-aebc-ee28570ab2cd/files/20e6d7f6-e216-405f-b403-621f0ac5a207.jpg',
     context:
       "The company was building an internal ML matching product. The team focused on real-time prediction speed, while actual user value wasn't clearly measured. Leadership needed results — not technical progress.",
+    metrics: [
+      { value: '2×', label: 'Product usage doubled in 6 months' },
+      { value: '100K+', label: 'Internal users on the platform' },
+      { value: '↑', label: 'Matching relevance improved' },
+      { value: '1', label: 'New value metric introduced' },
+    ],
     whatIDid: [
       'Reframed the product focus from "real-time speed" to measurable relevance',
       'Introduced a value metric (Proposal Rate) directly tied to user action',
