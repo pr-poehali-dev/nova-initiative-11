@@ -4,6 +4,7 @@ import HeroSection from '@/components/HeroSection';
 import WhoItsFor from '@/components/WhoItsFor';
 import HowIWork from '@/components/HowIWork';
 import Transformation from '@/components/Transformation';
+import CasesWidget from '@/components/CasesWidget';
 import Contacts from '@/components/Contacts';
 
 const Index = () => {
@@ -22,6 +23,7 @@ const Index = () => {
         <WhoItsFor />
         <HowIWork />
         <Transformation />
+        <CasesWidget />
         <Contacts />
       </main>
     </>
