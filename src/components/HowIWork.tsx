@@ -33,14 +33,6 @@ const steps = [
   },
 ];
 
-const outcomes = [
-  'A structured, accountable, high-performing team',
-  'A transparent financial logic behind operations',
-  'Measurable and controllable progress',
-  'Reduced chaos and lower dependency on any single individual',
-  'A clear foundation for scaling',
-];
-
 function StepCard({ step }: { step: typeof steps[0] }) {
   return (
     <div className="flex flex-1 flex-col gap-4 border border-white/10 p-6 transition-colors hover:border-white/25">
@@ -111,43 +103,25 @@ export default function HowIWork() {
           </p>
         </div>
 
-        {/* What the Client Gets + Timeline */}
-        <div className="grid gap-16 md:grid-cols-2">
-          <div>
-            <p className="mb-8 text-xs font-medium uppercase tracking-widest text-white/30">
-              What the Client Gets
-            </p>
-            <ul className="space-y-4">
-              {outcomes.map((item) => (
-                <li key={item} className="flex items-start gap-4">
-                  <span className="mt-2 h-px w-5 shrink-0 bg-white/25" />
-                  <span className="text-base font-light leading-snug text-white/70">
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <p className="mb-8 text-xs font-medium uppercase tracking-widest text-white/30">
-              Timeline
-            </p>
-            <div className="space-y-0 border-t border-white/10">
-              {[
-                { phase: 'Diagnosis', duration: '1–2 weeks' },
-                { phase: 'Architecture + key hiring', duration: '4–8 weeks' },
-                { phase: 'Stable operational mode', duration: '3–6 months' },
-              ].map((row) => (
-                <div
-                  key={row.phase}
-                  className="flex items-center justify-between border-b border-white/10 py-4"
-                >
-                  <span className="text-base font-light text-white/60">{row.phase}</span>
-                  <span className="text-base font-light text-white/30">{row.duration}</span>
-                </div>
-              ))}
-            </div>
+        {/* Timeline */}
+        <div className="max-w-sm">
+          <p className="mb-8 text-xs font-medium uppercase tracking-widest text-white/30">
+            Timeline
+          </p>
+          <div className="space-y-0 border-t border-white/10">
+            {[
+              { phase: 'Diagnosis', duration: '1–2 weeks' },
+              { phase: 'Architecture + key hiring', duration: '4–8 weeks' },
+              { phase: 'Stable operational mode', duration: '3–6 months' },
+            ].map((row) => (
+              <div
+                key={row.phase}
+                className="flex items-center justify-between border-b border-white/10 py-4"
+              >
+                <span className="text-base font-light text-white/60">{row.phase}</span>
+                <span className="text-base font-light text-white/30">{row.duration}</span>
+              </div>
+            ))}
           </div>
         </div>
 
