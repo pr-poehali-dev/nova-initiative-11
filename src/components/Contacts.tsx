@@ -32,6 +32,11 @@ const links = [
     value: 'tabletkideda',
     href: 'https://boosty.to/tabletkideda',
   },
+  {
+    label: 'Book',
+    value: 'Продукт — Google Books',
+    href: 'https://www.google.ru/books/edition/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82/Scg7EAAAQBAJ?hl=ru&gbpv=0',
+  },
 ];
 
 export default function Contacts() {
