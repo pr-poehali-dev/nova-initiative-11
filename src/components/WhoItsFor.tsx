@@ -1,18 +1,18 @@
 const audience = [
   {
-    label: 'Founders & Investors',
+    label: 'Founders with funded digital initiatives',
     description:
-      'Who have an idea and funding, but lack structured, accountable execution.',
+      "You have capital and a vision. What's missing is the execution system that turns both into a working product.",
   },
   {
-    label: 'CEOs',
+    label: 'Investors launching technology products',
     description:
-      'Who need to launch or relaunch a digital or IT initiative with clarity and control.',
+      "You have made the bet. Now you need someone who can build the operational structure that makes it pay off.",
   },
   {
-    label: 'Businesses',
+    label: 'Companies struggling with execution',
     description:
-      'That have resources and responsibility, but no operating system that reliably turns investment into measurable results.',
+      "Strategy exists. Budget exists. But delivery is slow, ownership is unclear, and results don't come.",
   },
 ];
 
