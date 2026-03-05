@@ -18,6 +18,18 @@ export default {
 			}
 		},
 		extend: {
+			fontSize: {
+				xs:   ['13px', { lineHeight: '20px' }],
+				sm:   ['15px', { lineHeight: '24px' }],
+				base: ['17px', { lineHeight: '28px' }],
+				lg:   ['20px', { lineHeight: '32px' }],
+				xl:   ['23px', { lineHeight: '34px' }],
+				'2xl':['28px', { lineHeight: '36px' }],
+				'3xl':['34px', { lineHeight: '42px' }],
+				'4xl':['42px', { lineHeight: '52px' }],
+				'5xl':['54px', { lineHeight: '64px' }],
+				'6xl':['68px', { lineHeight: '80px' }],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
