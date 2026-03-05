@@ -63,9 +63,9 @@ export default function HowIWork() {
 
         {/* Steps snake */}
         <div>
-          <p className="mb-16 text-xs font-medium uppercase tracking-widest text-white/30">
+          <h2 className="mb-16 text-4xl font-light text-white md:text-5xl">
             How I Work
-          </p>
+          </h2>
 
           {/* Row 1: 01 → 02 → 03 */}
           <div className="flex flex-col gap-4 md:flex-row md:items-stretch">
@@ -105,9 +105,9 @@ export default function HowIWork() {
 
         {/* Timeline */}
         <div>
-          <p className="mb-8 text-xs font-medium uppercase tracking-widest text-white/30">
+          <h2 className="mb-8 text-4xl font-light text-white md:text-5xl">
             Timeline
-          </p>
+          </h2>
           <div className="flex flex-col gap-4 md:flex-row">
             {[
               { phase: 'Diagnosis', duration: '1–2 weeks' },

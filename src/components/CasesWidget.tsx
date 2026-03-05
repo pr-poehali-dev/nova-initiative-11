@@ -7,9 +7,9 @@ export default function CasesWidget() {
       <div className="container mx-auto max-w-5xl">
 
         <div className="mb-12">
-          <p className="text-xs font-medium uppercase tracking-widest text-white/30">
+          <h2 className="text-4xl font-light text-white md:text-5xl">
             Case Studies
-          </p>
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 gap-px bg-white/10 md:grid-cols-3">
