@@ -18,11 +18,8 @@ export default function CasesList() {
       <main className="bg-black">
         <div className="px-8 pt-32 pb-24 md:px-16">
           <div className="container mx-auto max-w-6xl">
-            <p className="mb-4 text-xs font-medium uppercase tracking-widest text-white/30">
-              Case Studies
-            </p>
             <h1 className="mb-16 text-4xl font-light text-white md:text-5xl">
-              Selected Work
+              Case Studies
             </h1>
 
             <div className="grid grid-cols-1 gap-px md:grid-cols-3 bg-white/10">
