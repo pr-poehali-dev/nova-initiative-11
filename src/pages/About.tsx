@@ -259,9 +259,46 @@ export default function About() {
             <p className="mb-6 max-w-2xl text-lg font-light leading-relaxed text-white/55">
               I work on launching and developing technology initiatives — helping turn ideas, teams, and investments into functioning systems, products, and measurable results.
             </p>
-            <p className="mb-20 max-w-2xl text-base font-light leading-relaxed text-white/40">
+            <p className="mb-8 max-w-2xl text-base font-light leading-relaxed text-white/40">
               For more than 15 years my professional activity has been connected with digital products, technology projects, and building operational systems around them.
             </p>
+
+            {/* Full Story */}
+            <div className="mb-20">
+              <button
+                onClick={() => setStoryOpen((v) => !v)}
+                className="group flex w-full items-center justify-between border border-white/10 bg-white/[0.02] px-6 py-5 text-left transition-colors hover:border-white/20 hover:bg-white/[0.04]"
+              >
+                <div>
+                  <p className="text-xs font-medium uppercase tracking-widest text-white/30 mb-1">Extended Biography</p>
+                  <p className="text-sm font-light text-white/55">Full story — from childhood to today</p>
+                </div>
+                <Icon
+                  name={storyOpen ? 'ChevronUp' : 'ChevronDown'}
+                  size={18}
+                  className="text-white/30 shrink-0 transition-transform group-hover:text-white/50"
+                />
+              </button>
+
+              {storyOpen && (
+                <div className="border border-t-0 border-white/10 px-6 py-8 space-y-10">
+                  {fullStory.map((section) => (
+                    <div key={section.label}>
+                      <p className="mb-4 text-xs font-medium uppercase tracking-widest text-white/25">
+                        {section.label}
+                      </p>
+                      <div className="space-y-3">
+                        {section.content.map((para, i) => (
+                          <p key={i} className="text-sm font-light leading-relaxed text-white/50">
+                            {para}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
 
             {/* Stats */}
             <div className="mb-24 grid grid-cols-2 gap-px border border-white/10 md:grid-cols-4">
@@ -341,43 +378,6 @@ export default function About() {
               <p className="text-base font-light leading-relaxed text-white/50">
                 Outside my professional work I write fiction: essays, short stories, and imaginative worlds. I also enjoy creating stories and fairy tales for children.
               </p>
-            </div>
-
-            {/* Full Story */}
-            <div className="mb-24">
-              <button
-                onClick={() => setStoryOpen((v) => !v)}
-                className="group flex w-full items-center justify-between border border-white/10 bg-white/[0.02] px-6 py-5 text-left transition-colors hover:border-white/20 hover:bg-white/[0.04]"
-              >
-                <div>
-                  <p className="text-xs font-medium uppercase tracking-widest text-white/30 mb-1">Extended Biography</p>
-                  <p className="text-sm font-light text-white/55">Full story — from childhood to today</p>
-                </div>
-                <Icon
-                  name={storyOpen ? 'ChevronUp' : 'ChevronDown'}
-                  size={18}
-                  className="text-white/30 shrink-0 transition-transform group-hover:text-white/50"
-                />
-              </button>
-
-              {storyOpen && (
-                <div className="border border-t-0 border-white/10 px-6 py-8 space-y-10">
-                  {fullStory.map((section) => (
-                    <div key={section.label}>
-                      <p className="mb-4 text-xs font-medium uppercase tracking-widest text-white/25">
-                        {section.label}
-                      </p>
-                      <div className="space-y-3">
-                        {section.content.map((para, i) => (
-                          <p key={i} className="text-sm font-light leading-relaxed text-white/50">
-                            {para}
-                          </p>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
             </div>
 
             {/* Philosophy */}
