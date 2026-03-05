@@ -137,7 +137,7 @@ export default function HeroSection() {
                   Let's Work Together
                 </a>
                 <a
-                  href="https://wa.me/message/XXXXXXXXXXXXXXX"
+                  href="https://wa.me/79117821509"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 border border-white/15 px-8 py-3 text-sm font-light uppercase tracking-widest text-white/60 transition-all hover:border-white/40 hover:text-white"
