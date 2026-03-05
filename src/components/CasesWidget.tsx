@@ -6,20 +6,14 @@ export default function CasesWidget() {
     <section className="bg-black px-8 py-24 md:px-16">
       <div className="container mx-auto max-w-5xl">
 
-        <div className="mb-12 flex items-end justify-between">
+        <div className="mb-12">
           <p className="text-xs font-medium uppercase tracking-widest text-white/30">
             Case Studies
           </p>
-          <Link
-            to="/cases"
-            className="text-xs font-medium uppercase tracking-widest text-white/30 transition-colors hover:text-white"
-          >
-            All cases →
-          </Link>
         </div>
 
         <div className="grid grid-cols-1 gap-px bg-white/10 md:grid-cols-3">
-          {cases.map((c, i) => (
+          {cases.slice(0, 3).map((c, i) => (
             <Link
               key={c.slug}
               to={`/cases/${c.slug}`}
@@ -57,6 +51,15 @@ export default function CasesWidget() {
               </div>
             </Link>
           ))}
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <Link
+            to="/cases"
+            className="inline-block border border-white/20 px-10 py-3 text-sm font-light uppercase tracking-widest text-white/50 transition-all hover:border-white hover:text-white"
+          >
+            All Cases →
+          </Link>
         </div>
 
       </div>
