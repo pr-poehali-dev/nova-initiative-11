@@ -4,6 +4,7 @@ import HeroSection from '@/components/HeroSection';
 import WhoItsFor from '@/components/WhoItsFor';
 import HowIWork from '@/components/HowIWork';
 import Transformation from '@/components/Transformation';
+import ManifestoSection from '@/components/ManifestoSection';
 import CasesWidget from '@/components/CasesWidget';
 import Contacts from '@/components/Contacts';
 
@@ -20,6 +21,7 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
+        <ManifestoSection />
         <WhoItsFor />
         <HowIWork />
         <Transformation />
