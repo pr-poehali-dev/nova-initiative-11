@@ -21,7 +21,7 @@ export default function WhoItsFor() {
     <section className="bg-black px-8 py-24 md:px-16">
       <div className="container mx-auto max-w-5xl">
         <h2 className="mb-16 text-4xl font-light text-white md:text-5xl">
-          Who It's For
+          Who My Clients Are
         </h2>
         <div className="grid gap-px bg-white/10 md:grid-cols-3">
           {audience.map((item) => (
