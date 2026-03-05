@@ -104,6 +104,35 @@ export const cases: Case[] = [
     ],
   },
   {
+    slug: 'epam-ai-portfolio',
+    tag: 'EPAM Systems — AI / Enterprise Software',
+    title: 'Rationalizing an AI Product Portfolio',
+    subtitle: 'From 20 scattered AI initiatives to a focused strategy with clear investment decisions.',
+    image: 'https://cdn.poehali.dev/projects/f944b436-aa70-4c49-aebc-ee28570ab2cd/files/7436fb1d-6597-46eb-8d03-c4fe5c574a0f.jpg',
+    context:
+      'EPAM had developed a large internal portfolio of AI initiatives — around 20 teams working on models, prototypes, and early-stage products. The company lacked clarity on which initiatives were real products, which could become viable, which should stay as internal technologies, and which should be discontinued. Resources were spread across multiple initiatives without clear prioritization or strategy.',
+    metrics: [
+      { value: '~20', label: 'AI initiatives audited' },
+      { value: '3 mo', label: 'To full portfolio strategy' },
+      { value: '5', label: 'Initiatives closed' },
+      { value: '3', label: 'Products selected for development' },
+    ],
+    whatIDid: [
+      'Conducted a full audit of the AI portfolio — analyzed ~20 teams and their technologies, evaluated maturity, product potential, and market applicability',
+      'Classified all initiatives into four groups: products to develop further, products to maintain as-is, initiatives that could become products with restructuring, and initiatives to close',
+      'Defined development paths for selected products — assessed current maturity stage, identified required team capabilities, and defined product development direction for each',
+      'Created a clear product strategy for the portfolio, enabling structured resource allocation across people, compute, and funding',
+    ],
+    results: [
+      'Company gained a structured view of its entire AI portfolio within 3 months',
+      '5 initiatives were closed, freeing up resources',
+      '3 products selected for active development with defined roadmaps',
+      'Remaining projects maintained as supporting technologies',
+      'Resources reallocated to initiatives with real product potential',
+      'Clear product strategy established for the AI portfolio',
+    ],
+  },
+  {
     slug: 'epam-ml-platform',
     tag: 'EPAM Systems — ML Matching Platform (100K+ internal users)',
     title: 'Turning a Strategic AI Product into Measurable Impact',
