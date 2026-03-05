@@ -10,27 +10,27 @@ const images = [
 
 const cards = [
   {
-    label: 'Case 01',
+    label: '',
     title: 'From chaos to predictable execution',
     text: 'Delivery becomes structured and transparent in months.',
   },
   {
-    label: 'Case 02',
+    label: '',
     title: 'From scattered initiatives to a focused product portfolio',
     text: 'AI initiatives evaluated and prioritized in 3 months.',
   },
   {
-    label: 'Case 03',
+    label: '',
     title: 'From idea and budget to a working execution system',
     text: 'Team, ownership and delivery cadence built from scratch.',
   },
   {
-    label: 'Case 04',
+    label: '',
     title: 'From endless development to real product releases',
     text: 'Business priorities aligned with engineering.',
   },
   {
-    label: 'Case 05',
+    label: '',
     title: 'From overloaded teams to focused delivery',
     text: 'Scope drop reduced and roadmap becomes predictable.',
   },
