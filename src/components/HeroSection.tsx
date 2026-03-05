@@ -10,19 +10,29 @@ const images = [
 
 const cards = [
   {
-    label: 'Who I Am',
-    title: "Hi, I'm Eugene Abramenko.",
-    text: "I'm an IT & digital execution architect.",
+    label: 'Case 01',
+    title: 'From chaos to predictable execution',
+    text: 'Delivery becomes structured and transparent in months.',
   },
   {
-    label: 'What I Do',
-    title: 'I turn funded ideas into structured, accountable execution systems.',
-    text: '',
+    label: 'Case 02',
+    title: 'From scattered initiatives to a focused product portfolio',
+    text: 'AI initiatives evaluated and prioritized in 3 months.',
   },
   {
-    label: 'Use Case',
-    title: 'Have an idea and a budget?',
-    text: 'I build the operating structure that makes your digital or IT initiative actually work.',
+    label: 'Case 03',
+    title: 'From idea and budget to a working execution system',
+    text: 'Team, ownership and delivery cadence built from scratch.',
+  },
+  {
+    label: 'Case 04',
+    title: 'From endless development to real product releases',
+    text: 'Business priorities aligned with engineering.',
+  },
+  {
+    label: 'Case 05',
+    title: 'From overloaded teams to focused delivery',
+    text: 'Scope drop reduced and roadmap becomes predictable.',
   },
 ];
 
