@@ -75,6 +75,35 @@ export const cases: Case[] = [
     ],
   },
   {
+    slug: 'moneycare-execution',
+    tag: 'MoneyCare — Fintech / Credit Marketplace',
+    title: 'Restoring Execution Control in a Product Company',
+    subtitle: 'From chaotic, fragmented delivery to a structured system aligned with business priorities.',
+    image: 'https://cdn.poehali.dev/projects/f944b436-aa70-4c49-aebc-ee28570ab2cd/files/f67da5d9-a19c-4ffc-85ea-810c532f5806.jpg',
+    context:
+      'When I joined MoneyCare in 2018, the company faced serious execution breakdown. Business and development had no shared prioritization. Delivery was unpredictable — most tasks were constantly re-scoped or abandoned. Teams worked in isolated tools (WhatsApp, Skype, private messengers), and the development structure created constant conflict between backend and frontend. Jira was used only as a technical tracker with no product-level visibility. As a result: priorities changed constantly, teams worked overtime, releases were chaotic, and business had no visibility into delivery.',
+    metrics: [
+      { value: '~60%→20%', label: 'Scope drop reduced' },
+      { value: '6 mo', label: 'To structured delivery' },
+      { value: '1', label: 'Unified workspace (Slack)' },
+      { value: '↑', label: 'Business visibility restored' },
+    ],
+    whatIDid: [
+      'Built a unified communication system — introduced Slack as a single company-wide workspace, aligned all team leads, and integrated Jira alerts and dev workflows into Slack',
+      'Rebuilt task management around product goals — redesigned Jira structure, introduced Epic-level management for product initiatives, and aligned development with business priorities',
+      'Distributed product ownership — delegated backlog ownership to technical team leads, turning them into product owners for their domains',
+      'Structured bug flow from support to development — created a centralized bug intake process, standardized bug types and priority levels, and integrated support with development workflows',
+    ],
+    results: [
+      'Company-wide communication became centralized and transparent within the first months',
+      'Business and development gained shared visibility of priorities',
+      'Scope drop reduced from ~60% to ~20% within 6 months',
+      'Delivery became significantly more predictable',
+      'Business stakeholders could track development progress in real time',
+      'Development teams focused on fewer but higher-impact tasks',
+    ],
+  },
+  {
     slug: 'epam-ml-platform',
     tag: 'EPAM Systems — ML Matching Platform (100K+ internal users)',
     title: 'Turning a Strategic AI Product into Measurable Impact',
