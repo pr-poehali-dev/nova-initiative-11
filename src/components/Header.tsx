@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 
@@ -13,11 +13,20 @@ export default function Header() {
   const location = useLocation();
   const isHome = location.pathname === '/';
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-5 md:px-16">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent pointer-events-none" />
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-5 md:px-16 transition-colors duration-300"
+        style={{ backgroundColor: scrolled ? 'rgba(0,0,0,0.92)' : 'transparent' }}
+      >
+        <div className={`absolute inset-0 pointer-events-none transition-opacity duration-300 ${scrolled ? 'opacity-0' : 'opacity-100'} bg-gradient-to-b from-black/60 to-transparent`} />
 
         <Link
           to="/"
